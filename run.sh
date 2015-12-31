@@ -1,4 +1,4 @@
 echo "starting"
 sudo nginx
-/usr/local/bin/supervisord -nodaemon
+/usr/bin/uwsgi --ini /code/uwsgi.ini
 
