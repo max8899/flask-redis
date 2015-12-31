@@ -1,4 +1,4 @@
 echo "starting"
-sudo nginx
-/usr/bin/uwsgi --ini /code/uwsgi.ini
+nginx
+/usr/local/bin/uwsgi --ini /code/uwsgi.ini
 
