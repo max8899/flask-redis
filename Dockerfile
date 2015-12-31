@@ -2,7 +2,6 @@ FROM python:2.7
 MAINTAINER alauda.cn
 RUN apt-get update && apt-get install -y nginx && \
     rm -rf /var/lib/apt/lists/* && rm -rf /etc/nginx/sites-enabled/default && \
-    echo "daemon off;" >> /etc/nginx/nginx.conf && \
     easy_install supervisor && easy_install supervisor-stdout
 COPY ./flask-redis /code
 COPY run.sh /
