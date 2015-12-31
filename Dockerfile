@@ -7,8 +7,8 @@ COPY ./flask-redis /code
 COPY run.sh /
 WORKDIR /code
 RUN pip install -r requirements.txt && ln -s /code/nginx.conf /etc/nginx/sites-enabled/nginx.conf && \
-    ln -s /code/supervisord.conf /etc/supervisord.conf && chmod 775 /run.sh
+    chmod 775 /run.sh && mkdir /var/log/uwsgi
 EXPOSE 80
-VOLUME /code
+VOLUME /code, /var/log/uwsgi
 CMD ["/run.sh"]
 ENTRYPOINT ["/bin/bash", "-c"]
