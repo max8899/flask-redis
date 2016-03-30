@@ -10,5 +10,4 @@ RUN pip install -r requirements.txt && ln -s /code/nginx.conf /etc/nginx/sites-e
     chmod 775 /run.sh
 EXPOSE 80
 VOLUME /code
-CMD ["/run.sh"]
-ENTRYPOINT ["/bin/bash", "-c"]
+CMD ["/usr/local/bin/python", "/code/app.py"]
